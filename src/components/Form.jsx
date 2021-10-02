@@ -21,37 +21,15 @@ function Form() {
     };
 
     Axios(config)
-      .then(function (response) {
+      .then( (response)=> {
         console.log('response del service');
         console.log(JSON.stringify(response.data));
       })
-      .catch(function (error) {
+      .catch((error)=> {
         console.log(error);
       });
 
-    /* const config = {
-            headers: { 'test-key': token 'Content-Type': 'application/json'},
-            
-            
-        };
-        
-        const bodyParameters = {
-           key: data
-        };
-        
-        Axios.post( 
-          'https://sistemacaliva.com/api/front-test',
-          bodyParameters,
-          config
-        ).then(response => {
-            console.log(response)
-            /* if (response && response.status === true) {
-                
-            } */
-    /*  })
-        .catch(error => {
-            console.log(error)
-        }); */
+   
   };
 
   return (
