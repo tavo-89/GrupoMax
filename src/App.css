@@ -1,38 +1,270 @@
-.App {
-  text-align: center;
+:root{
+    --negro: #000000;
+    --celeste: #75DED7;
+    --blanco : #ffff;
+}
+/* HEADER */
+nav{
+    background-color: var(--negro);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav img{
+    margin-left: 11vh;
+    width: 18vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .btnMenu{
+    margin-right: 4vh;
+    display: flex;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar{
+    padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+nav .btnMenu a{
+    font-weight: 100;
+    font-family: "barlow";
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 2rem 2.5rem !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* BODY */
+.banner img{
+    width: 100%;
+    height: 47vh;
+}
+
+.textoBanner{
+    right: 0;
+    position: absolute;
+    left: 0;
+    top: 30%;
+}
+
+.textoBanner h3,
+h1{
+    font-weight: 100;
+    font-family: "barlow";
+    color:  var(--blanco);
+    text-align: center;
+}
+
+.textoBanner h1{
+    margin: -13px;
+    font-weight: 400;
+    font-size: 9vh;
+}
+
+.textoBanner h3{
+    margin: 0;
+    font-size: 4vh;
+}
+
+.medio{
+    padding: 9vh;
+    display: flex;
+}
+
+.medio .iconoSillon{
+    margin-left: 15vh;
+    padding: 0;
+    margin-right: -15vh;
+}
+
+.medio .iconoSillon img{
+    width: 35vh;
+}
+
+.medio .nosotros h1{
+    margin-bottom: 2vh;
+    font-family: "gara";
+    text-align: inherit;
+    color: var(--negro);
+}
+
+.medio .nosotros p{
+    font-family: "barlow ligth";
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.banner2 img{
+    width: 100%;
+    filter: brightness(120%);
+}
+
+.banner2 h1{
+    position: absolute;
+    top: 127%;
+    right: 0;
+    left: 0;
+    font-size: 56px;
+    font-weight: 300;
+}
+
+
+/* PRODUCTS */
+.cards{
+    padding: 0;
+    display: flex;
+    padding-top: 12vh;
+    padding-bottom: 6vh;
+}
+
+.cards .card{
+    border: none;
+}
+
+.cards .card img{
+    padding: 4.5vh 4.5vh 0;
+    justify-content: center;
+}
+
+.cards .card .card-body{
+    padding: 0px;
+    text-align: center;
+}
+
+.cards .card .card-body h1{
+    font-family: "garamond";
+    color: var(--negro);
+    margin: 0;
+}
+
+.cards .card .card-body h4{
+    font-family: "barlow thin";
+    font-size: 18px;
+    color: rgb(215 212 212);
+}
+
+.btnVer{
+    padding-bottom: 75px;
+    text-align: center;
+}
+
+.btnVer button{
+    font-family: "barlow thin";
+    width: 18vh;
+    height: 5vh;
+    color: var(--blanco);
+    background-color: var(--celeste);
+    border: none;
+    font-size: 25px;
+}
+
+
+/* FOOTER */
+footer{
+    padding: 50px;
+    background-color: var(--negro);
+}
+
+.pie{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pie h1{
+    text-align: inherit;
+    font-family: "garamond";
+}
+
+.pie form label{
+    font-size: 20px;
+    font-family: "Barlow Extralight";
+    color: var(--blanco);
+    position: absolute;
+    margin-top: 20px;
+}
+
+.pie form input,
+.pie form select{
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--celeste);
+    width: 85%;
+    color: white;
+    outline: none;
+    margin: 12px;
+    font-size: 20px;
+    padding: 0 0 24px 0 !important;
+    font-family: "Barlow Extralight";
+    height: 50px;
+}
+
+.pie form option{
+    color: black;
+}
+
+.pie form input::placeholder,
+.pie form option:disabled{
+    color: white;
+   
+}
+
+
+.pie form button{
+    margin-left: 57%;
+    background-color: var(--celeste);
+    border: none;
+    color: var(--blanco);
+    margin-top: 5%;
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.pie .contacto{
+    padding: 0 50px 0px
+}
+
+.pie .contacto ul{
+    padding: 0;
+}
+
+.pie .contacto ul li{
+    padding: 10px 0 10px;
+    list-style: none;
+}
+
+.pie .contacto ul li a{
+    font-family: "Barlow Extralight";
+    font-size: 20px;
+    color: var(--blanco);
+}
+
+.pie .contacto ul li a i{
+    padding: 0 12px 0 0;
+    font-size: 20px;
+    color: var(--celeste);
+}
+
+.pie .horarios{
+    padding: 0 0 0 100px;
+}
+
+.pie .horarios p{
+    font-family: "Barlow Extralight";
+    font-size: 20px;
+    margin-bottom: 0;
+    color: var(--blanco);
+}
+
+.derechos{
+    padding: 40px;
+    background-color: var(--celeste);
+}
+
+.derechos h2{
+    font-size: 22px;
+    font-family: "Barlow Extralight";
+    text-align: center;
+    color: var(--blanco);
 }

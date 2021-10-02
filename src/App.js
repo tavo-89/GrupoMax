@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/Card';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Body />
+      <div className="container cards">
+        <Card titulo="Cómoda" habitacion="Dormitorio" src="../images/IMG_Cómoda.png" />
+        <Card titulo="Silla" habitacion="Cocina" src="../images/IMG_Sillon.png" />
+        <Card titulo="Mesa ratona" habitacion="Living/Comedor" src="../images/IMG_MesaRatona.png" />
+      </div>
+      <div className="btnVer">
+        <button>Ver más</button>
+      </div>
+
+      <Footer />
+
+
     </div>
   );
 }
