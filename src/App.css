@@ -23,14 +23,68 @@ nav .btnMenu{
     padding: 0;
 }
 
-nav .btnMenu a{
+/* nav .btnMenu a{
     font-weight: 100;
     font-family: "barlow";
     color: var(--blanco);
     text-decoration: none;
     font-size: 20px;
     padding: 2rem 2.5rem !important;
-}
+} */
+
+nav .btnMenu .button {
+    font-family: "barlow";
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 2rem 2.5rem !important;
+    position: relative;
+    outline-color: rgba(49, 138, 172, 0.4);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  nav .btnMenu .button:hover {
+    text-shadow: 1px 1px 6px #fff;
+  }
+  
+  nav .btnMenu .float-shadow {
+    color: white;
+    display: inline-block;
+    position: relative;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    -webkit-tap-highlight-color: rgba(243, 242, 242, 0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(94, 93, 93, 0);
+  }
+  nav .btnMenu .float-shadow:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 70%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(177, 177, 177, 0) 80%
+    );
+    /* W3C */
+    transition-duration: 0.3s;
+    transition-property: transform opacity;
+  }
+  nav .btnMenu .float-shadow:hover {
+    transform: translateY(-5px);
+    /* mueve el elemeto 5 px arriba */
+  }
+  nav .btnMenu .float-shadow:hover:before {
+    opacity: 1;
+    transform: translateY(5px);
+    /*mueva el elemento 5px hacia abajo (permanecerá en su lugar porque está unido al elemento que también se mueve hacia arriba 5px) */
+  }
 
 /* BODY */
 .banner img{
@@ -116,6 +170,10 @@ h1{
     padding-bottom: 6vh;
 }
 
+.card:hover{
+    box-shadow: 5px 5px 10px 1px rgb(110, 110, 110);
+}
+
 .cards .card{
     border: none;
 }
@@ -147,7 +205,7 @@ h1{
     text-align: center;
 }
 
-.btnVer button{
+.btnVer button {
     font-family: "barlow thin";
     width: 18vh;
     height: 5vh;
@@ -155,7 +213,17 @@ h1{
     background-color: var(--celeste);
     border: none;
     font-size: 25px;
-}
+    display: inline-block;
+    transition-duration: 0.3s;
+    transition-property: box-shadow;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .btnVer button:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  }
+
 
 
 /* FOOTER */
@@ -209,17 +277,26 @@ footer{
 }
 
 
-.pie form button{
+.pie form .btnEnviar{
+    border-radius: 0;
     margin-left: 57%;
     background-color: var(--celeste);
     border: none;
     color: var(--blanco);
     margin-top: 5%;
     width: 90px;
-    height: 30px;
+    height: 35px;
     font-size: 20px;
     font-weight: 100;
+    display: flex;
+    align-items: center;
 }
+
+.pie form .btnEnviar:hover{
+    border: 1px solid rgb(170, 169, 169);
+    box-shadow: 1px 1px 10px 1px #9c9a9a;
+}
+
 
 .pie .contacto{
     padding: 0 50px 0px
@@ -267,4 +344,27 @@ footer{
     font-family: "Barlow Extralight";
     text-align: center;
     color: var(--blanco);
+}
+
+/* MODAL */
+.txtModal{
+    color: var(--negro);
+    text-align: center;
+    font-family:"Barlow";
+}
+
+.btnModalClose{
+    font-size: 22px;
+    font-family: "Barlow Extralight";
+    border-radius: 0;
+    border: none;
+    background-color: var(--celeste);
+    color: var(--blanco);
+    text-align: center;
+}
+
+
+
+.modal-footer{
+    justify-content: center;
 }

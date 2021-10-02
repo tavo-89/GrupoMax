@@ -1,35 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Axios from "axios";
+import { Modal, ModalBody, ModalFooter, Button } from "reactstrap";
 
 function Form() {
   const { handleSubmit, register } = useForm();
 
   const submit = (data) => {
     console.log(data);
-    const token ="eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ";
+    const token =
+      "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiZGV2ZWxvcGVyIiwiSXNzdWVyIjoiSXNzdWVyIiwiVXNlcm5hbWUiOiJGcm9udERldiIsImV4cCI6MTYyODY5NTg3NiwiaWF0IjoxNjI4Njk1ODc2fQ.CDRPz6Eta78BzmuNTNZsnzzDU2TRgvEtMs-_aZlWCZQ";
 
     data = JSON.stringify(data);
 
     var config = {
-      method: 'post',
-      url: 'https://sistemacaliva.com/api/front-test',
+      method: "post",
+      url: "https://sistemacaliva.com/api/front-test",
       headers: {
-        'test-key': token,
+        "test-key": token,
       },
       data: data,
     };
 
     Axios(config)
-      .then( (response)=> {
-        console.log('response del service');
+      .then((response) => {
+        console.log("response del service");
         console.log(JSON.stringify(response.data));
+        
       })
-      .catch((error)=> {
+      .catch((error) => {
         console.log(error);
       });
+  };
 
-   
+  /* Modal */
+
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen(!open);
   };
 
   return (
@@ -78,10 +87,24 @@ function Form() {
               {...register("consulta")}
             />
 
-            <button type="submit">ENVIAR</button>
+            <Button onClick={toggle} className="btnEnviar" type="submit">
+              ENVIAR
+            </Button>
           </div>
         </div>
       </form>
+
+      <Modal isOpen={open}>
+        <ModalBody>
+          <h1 className="txtModal">Enviado Correctamente</h1>
+        </ModalBody>
+
+        <ModalFooter>
+          <Button className="btnModalClose" onClick={toggle}>
+            Cerrar
+          </Button>
+        </ModalFooter>
+      </Modal>
     </>
   );
 }
